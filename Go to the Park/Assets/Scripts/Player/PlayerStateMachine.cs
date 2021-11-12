@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Base of the finite state machine for Player movement
 public class PlayerStateMachine : MonoBehaviour
 {
     PlayerBaseState currentState;
@@ -17,7 +18,7 @@ public class PlayerStateMachine : MonoBehaviour
         currentState.UpdateLogic();
     }
 
-    void LateUpdate()
+    void FixedUpdate()
     {
         currentState.UpdatePhysics();
     }

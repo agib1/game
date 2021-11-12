@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Manager for the finite state machine for Player Movement. Using Rigidbody physics.
 public class PlayerStateManager : PlayerStateMachine
 {
     public float walkSpeed = 2f;
-    public float runSpeed = 8f;
+    public float maxSpeed = 6f;
     public float jumpForce = 5f;
     public LayerMask groundLayer;
     
@@ -19,7 +20,7 @@ public class PlayerStateManager : PlayerStateMachine
     [HideInInspector]
     public Walking walkingState;
     [HideInInspector]
-    public Running runningState;
+    public Accelerating acceleratingState;
     [HideInInspector]
     public Jumping jumpingState;
     // [HideInInspector]
@@ -31,7 +32,7 @@ public class PlayerStateManager : PlayerStateMachine
     {
         idleState = new Idle(this);
         walkingState = new Walking(this);
-        runningState = new Running(this);
+        acceleratingState = new Accelerating(this);
         jumpingState = new Jumping(this);
         // skiddingState = new Skidding(this);
         // trudgingState = new Trudging(this);

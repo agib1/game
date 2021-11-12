@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//State for Idle,. uses heirachical state machine - inherited by all classes under Moving and Idle
 public class Idle : Grounded
 {
     private PlayerStateManager sm;
@@ -25,11 +27,6 @@ public class Idle : Grounded
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
             playerStateManager.ChangeState(sm.walkingState);
-        }
-
-        if(Input.GetKeyDown(KeyCode.UpArrow) && Input.GetKeyDown(KeyCode.RightShift))
-        {
-            playerStateManager.ChangeState(sm.runningState);
         }
     }
 }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Base state used to inherate logic methods: hierachical 
 public class PlayerBaseState : MonoBehaviour
 {
     protected PlayerStateManager playerStateManager;

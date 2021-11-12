@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+//Level class that records the status of a given level. Used for game play progression.
+//Level is unlocked if previous level has recieved over two stars.
 public class Level : ScriptableObject
 {
     public string tag;
@@ -14,6 +16,11 @@ public class Level : ScriptableObject
     private GameObject star1;
     private GameObject star2;
     private GameObject star3;
+
+    private void Start()
+    {
+        InitializeStars();
+    }
 
     public void InitializeStars()
     {

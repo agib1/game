@@ -18,19 +18,15 @@ public class Powerdowns : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Human"))
-        {
-            Debug.Log("You died !");
-            gameObject.SetActive(false);
-        }
-    }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        // if (other.gameObject.CompareTag("Player"))
+        // if (collision.gameObject.CompareTag("Player"))
         // {
-        //     //move
+            //if tag == human
+        //     //move... ai
         //     //play sound
+
+            //if tag == car
+                //beep
+                //break car...ai
         // }
     }
 }

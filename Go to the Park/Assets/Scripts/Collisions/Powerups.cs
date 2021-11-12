@@ -16,6 +16,8 @@ public class Powerups : MonoBehaviour
         
     }
 
+    //could do random allocation of poweups based on level difficulty???
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//State for Jumping, using rigidbody physics. opposite of grounded
 public class Jumping : PlayerBaseState
 {
     private PlayerStateManager sm;
