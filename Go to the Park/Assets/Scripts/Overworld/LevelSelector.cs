@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
+//Class used to select levels using an instances of the Level class - not currently in use.
 public class LevelSelector : MonoBehaviour
 {
     private Level level1;

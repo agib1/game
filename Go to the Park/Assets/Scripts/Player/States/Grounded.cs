@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+//Class for being Grounded, part of heirachical state machine - inherited by Moving and Idle.
 public class Grounded : PlayerBaseState
 {
     protected PlayerStateManager sm;

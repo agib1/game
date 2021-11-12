@@ -5,7 +5,7 @@ using UnityEngine;
 //Base of the finite state machine for Player movement
 public class PlayerStateMachine : MonoBehaviour
 {
-    PlayerBaseState currentState;
+    public PlayerBaseState currentState;
 
     void Start()
     {

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//Class for moving, part heirachical state machine - inherited by Wakking and Accelerating..
 public class Moving : Grounded
 {
     protected PlayerStateManager sm;
@@ -28,7 +30,7 @@ public class Moving : Grounded
             playerStateManager.ChangeState(sm.idleState);    
         }
     }
-
+    
     public override void UpdatePhysics()
     {
         base.UpdatePhysics();

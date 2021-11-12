@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     private int carPoints = 30;
     [SerializeField]
     private int willToKeepGoing = 100;
+    [SerializeField]
+    //relative to player rigidbody mass of 1
+    private float humanMass = 1;
+    [SerializeField]
+    //relative to player rigidbody mass of 1
+    private float carMass = 3;
     public float timeTaken;
 
     public bool levelCompleted;
@@ -48,12 +54,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Human"))
         {
             willToKeepGoing -= humanPoints;
+            PhysicsCollisonResponse(humanMass, collision);
 
         }
 
         if (collision.gameObject.CompareTag("Car"))
         {
             willToKeepGoing -= carPoints;
+            PhysicsCollisonResponse(carMass, collision);
         }
 
         if (collision.gameObject.CompareTag("Nature"))
@@ -62,13 +70,31 @@ public class PlayerController : MonoBehaviour
             //stop timer, get time
             //pass to LevelSelector
         }
-    }
-
-    //Collision Detection - Physics: When the player collides with the AI elements, physics is used as a responce.
-    void PhysicsCollisonResponse(int mass)
-    {
 
     }
+
+    // //Collision Detection - Physics: When the player collides with the AI elements, physics is used as a responce.
+    // void PhysicsCollisonResponse(float mass, Collision collision)
+    // {
+    //     Rigidbody rb = gameObject.GetComponent<Rigidbody>();   
+    //     //change for moving car
+
+    //     // if (sm.isAccelerating == true)
+    //     // {
+    //     //     speed = sm.maxSpeed;
+    //     // }
+    //     // else
+    //     // {
+    //     //     speed = sm.walkSpeed;
+    //     // }
+
+    //     float magnitude = 50000;
+    //     magnitude = magnitude * mass;
+
+    //     Vector3 force = transform.position - collision.transform.position;
+    //     force.Normalize();
+    //     rb.AddForce(force * magnitude);
+    // }
 
     // Start is called before the first frame update
     void Start()
