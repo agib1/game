@@ -12,13 +12,12 @@ public class Menu : MonoBehaviour
     private GameObject[] menuObjects;
     private GameObject[] failObjects;
     private GameObject[] finishObjects;
+    private GameObject[] menuCopy;
 
     public void Pause() 
     {
         currentLevel = SceneManager.GetActiveScene().name;
 
-        gameObjects = GameObject.FindGameObjectsWithTag("GameCanvas");
-        
         foreach (GameObject o in gameObjects)
         {
             o.SetActive(false);
@@ -58,6 +57,7 @@ public class Menu : MonoBehaviour
         menuObjects = GameObject.FindGameObjectsWithTag("MenuCanvas");
         failObjects = GameObject.FindGameObjectsWithTag("FailCanvas");
         finishObjects = GameObject.FindGameObjectsWithTag("FinishCanvas");
+        gameObjects = GameObject.FindGameObjectsWithTag("GameCanvas");
         
         foreach (GameObject o in menuObjects)
         {

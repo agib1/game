@@ -1612,13 +1612,13 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   - hash:
       serializedVersion: 2
-      Hash: 99bf7063633fe485c08d2a1a08cb273f
+      Hash: 3ab5ba004138436028e0877b2e3bef53
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerStateManager
   - hash:
       serializedVersion: 2
-      Hash: b96e9589dafde51d9d7fd71cc76827f6
+      Hash: bc8a08645716ef4207fde3578a0a864f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -1678,7 +1678,7 @@ ScriptsOnlyBuild:
     className: PlayerBaseState
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 3e6777c2489c66f744645255d2095c4a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerStateMachine
@@ -1700,12 +1700,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelSelector
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Accelerating
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f

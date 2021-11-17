@@ -15,12 +15,12 @@ public class PlayerController : MonoBehaviour
     private int carPoints = 30;
     [SerializeField]
     private int willToKeepGoing = 100;
-    [SerializeField]
-    //relative to player rigidbody mass of 1
-    private float humanMass = 1;
-    [SerializeField]
-    //relative to player rigidbody mass of 1
-    private float carMass = 3;
+    // [SerializeField]
+    // //relative to player rigidbody mass of 1
+    // private float humanMass = 1;
+    // [SerializeField]
+    // //relative to player rigidbody mass of 1
+    // private float carMass = 3;
     public float timeTaken;
 
     public bool levelCompleted;
@@ -54,14 +54,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Human"))
         {
             willToKeepGoing -= humanPoints;
-            PhysicsCollisonResponse(humanMass, collision);
+            // PhysicsCollisonResponse(humanMass, collision);
 
         }
 
         if (collision.gameObject.CompareTag("Car"))
         {
             willToKeepGoing -= carPoints;
-            PhysicsCollisonResponse(carMass, collision);
+            // PhysicsCollisonResponse(carMass, collision);
         }
 
         if (collision.gameObject.CompareTag("Nature"))
