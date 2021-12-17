@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,17 +18,26 @@ public class PlayerController : MonoBehaviour
     private int carPoints = 30;
     [SerializeField]
     private int willToKeepGoing = 100;
-    // [SerializeField]
-    // //relative to player rigidbody mass of 1
-    // private float humanMass = 1;
-    // [SerializeField]
-    // //relative to player rigidbody mass of 1
-    // private float carMass = 3;
-    public float timeTaken;
 
     public bool levelCompleted;
 
     private Text willToKeepGoingText;
+
+    private Text timeText;
+
+    private Text finishText;
+
+    private bool timerGoing;
+
+    private float startTime;
+
+    private float timeElapsed;
+
+    public Menu menu;
+
+    public Level level;
+
+
 
     
     //Postive Feedback Loop: Player can choose to go around collecting poweups.
@@ -67,34 +79,17 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Nature"))
         {
             levelCompleted = true;
+            timerGoing = false;
+
+            int time_range = ((int) timeElapsed /60);
+            menu.Finish();
+            level.SetAsCompleted(time_range);
+	
             //stop timer, get time
             //pass to LevelSelector
         }
 
     }
-
-    // //Collision Detection - Physics: When the player collides with the AI elements, physics is used as a responce.
-    // void PhysicsCollisonResponse(float mass, Collision collision)
-    // {
-    //     Rigidbody rb = gameObject.GetComponent<Rigidbody>();   
-    //     //change for moving car
-
-    //     // if (sm.isAccelerating == true)
-    //     // {
-    //     //     speed = sm.maxSpeed;
-    //     // }
-    //     // else
-    //     // {
-    //     //     speed = sm.walkSpeed;
-    //     // }
-
-    //     float magnitude = 50000;
-    //     magnitude = magnitude * mass;
-
-    //     Vector3 force = transform.position - collision.transform.position;
-    //     force.Normalize();
-    //     rb.AddForce(force * magnitude);
-    // }
 
     // Start is called before the first frame update
     void Start()
@@ -102,11 +97,43 @@ public class PlayerController : MonoBehaviour
         willToKeepGoing = 100;
 
         willToKeepGoingText = GameObject.Find("WillToKeepGoingText").GetComponent<Text>();
+
+        timeText = GameObject.Find("TimerText").GetComponent<Text>();
+
+        finishText = GameObject.Find("FinishTime").GetComponent<Text>();
+
+        timerGoing = true;
+        startTime = Time.time;
+
+        menu = GetComponent<Menu>();
+        level = GetComponent<Level>();
+
+        level.InitializeStars();
+
     }
 
     // Update is called once per frame
     void Update()
     {
         willToKeepGoingText.text = "Will To Keep Going: " + willToKeepGoing;
+
+        if (willToKeepGoing == 0) {
+            menu.Fail();
+        }
+
+        StartCoroutine(Timer());
+      
+    }
+
+    IEnumerator Timer() {
+        while(timerGoing)
+        {
+            timeElapsed = Time.time - startTime;
+            string mins = ((int) timeElapsed /60).ToString();
+            string secs = (timeElapsed % 60).ToString("f0");
+            timeText.text = "Time Taken: " + mins + " : " + secs;
+            finishText.text = "You finished in: " + mins + " : " + secs;
+            yield return null;
+        }
     }
 }

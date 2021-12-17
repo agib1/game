@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System;
 
 //Menu class with game options and progression screens
 public class Menu : MonoBehaviour
@@ -50,6 +52,38 @@ public class Menu : MonoBehaviour
     public void Quit()
     {
         SceneManager.LoadScene("Welcome");
+    }
+
+    public void Fail()
+    {
+        foreach (GameObject o in gameObjects)
+        {
+            o.SetActive(false);
+        }
+
+        foreach (GameObject o in failObjects)
+        {
+            o.SetActive(true);
+        }
+    }
+
+    public void Finish()
+    {
+        foreach (GameObject o in gameObjects)
+        {
+            o.SetActive(false);
+        }
+
+        foreach (GameObject o in finishObjects)
+        {
+            o.SetActive(true);
+        }
+    }
+
+    public void Next()
+    {
+        string nextLevel = SceneManager.GetActiveScene().name;
+        SceneManager.LoadScene(nextLevel);
     }
 
     private void Start()

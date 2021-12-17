@@ -7,22 +7,14 @@ using UnityEngine.SceneManagement;
 //Class used to select levels using an instances of the Level class - not currently in use.
 public class LevelSelector : MonoBehaviour
 {
-    private Level level1;
-    private Level level2;
-    private Level level3;
+    string[] levels;
 
-    private Level[] levels;
+    int no_levels = 2;
+    List<GameObject>[] levelObjects;
 
-    private Level currentLevel;
-    private int currentLevelIndex;
-    private int[] notCurrentIndexs;
+    string currentLevel;
 
-    private List<GameObject> level1Objects;
-    private List<GameObject> level2Objects;
-    private List<GameObject> level3Objects;
-
-    private List<GameObject>[] levelObjects;
-
+    int currentLevelIndex;
     void Start()
     {
         InitializeLevels();
@@ -31,45 +23,31 @@ public class LevelSelector : MonoBehaviour
 
     private void InitializeLevels()
     {
-        level1 = ScriptableObject.CreateInstance<Level>();
-        level1.tag = "Level1";
-
-        level2 = ScriptableObject.CreateInstance<Level>();
-        level2.tag = "Level2";
-
-        level3 = ScriptableObject.CreateInstance<Level>();
-        level3.tag = "Level3";
-
-        levels = new Level[] {level1, level2, level3};
+        levels = new string[] {"level1", "level2"};
 
         currentLevelIndex = 0;
-        notCurrentIndexs = getNotCurrentIndexs();
         
-        currentLevel = level1;
-        // currentLevel = levels[currentLevelIndex];
+        currentLevel = levels[currentLevelIndex];
     }
 
     private void InitializeUI()
     {
-        level1Objects = GameObject.FindGameObjectsWithTag(level1.tag).ToList();
-        level2Objects = GameObject.FindGameObjectsWithTag(level2.tag).ToList();
-        level3Objects = GameObject.FindGameObjectsWithTag(level3.tag).ToList();
+        List<GameObject> level1Objects = GameObject.FindGameObjectsWithTag("Level1").ToList();
+        List<GameObject> level2Objects = GameObject.FindGameObjectsWithTag("Level2").ToList();
 
-        Debug.Log(level1Objects.Count);
+        levelObjects = new List<GameObject>[] {level1Objects, level2Objects};
 
-        levelObjects = new List<GameObject>[] {level1Objects, level2Objects, level3Objects};
-
-        hideNotCurrentObjects();
+        hideObjects();
+        showCurrentObjects();
     }
     public void NextLevel()
     {
-        if (currentLevelIndex <= 2)
+        if (currentLevelIndex < no_levels)
         {
             currentLevelIndex += 1;
-            //currentLevel = levels[currentLevelIndex];
-            notCurrentIndexs = getNotCurrentIndexs();
+ 
 
-            hideNotCurrentObjects();
+            hideObjects();
             showCurrentObjects();
         }
        
@@ -77,20 +55,18 @@ public class LevelSelector : MonoBehaviour
 
     public void PreviousLevel()
     {
-        if (currentLevelIndex >= 2)
+        if (currentLevelIndex > 0)
         {
             currentLevelIndex -= 1;
-            //currentLevel = levels[currentLevelIndex];
-            notCurrentIndexs = getNotCurrentIndexs();
 
-            hideNotCurrentObjects();
+            hideObjects();
             showCurrentObjects();
         }
     }
 
     public void SelectLevel()
     {
-        if (currentLevel = level1)
+        if (currentLevel == "level1")
         {
             SceneManager.LoadScene("Level 1");
         }
@@ -104,18 +80,6 @@ public class LevelSelector : MonoBehaviour
         // }
     }
 
-    
-
-    private void hideNotCurrentObjects()
-    {
-        List<GameObject> notCurrentObjects = levelObjects[notCurrentIndexs[0]].Concat(levelObjects[notCurrentIndexs[0]]).ToList();
-
-        foreach (GameObject o in notCurrentObjects)
-        {
-            o.SetActive(false);
-        }
-    }
-
     private void showCurrentObjects()
     {
         List<GameObject> currentObjects = levelObjects[currentLevelIndex];
@@ -126,13 +90,17 @@ public class LevelSelector : MonoBehaviour
         }
     }
 
-    private int[] getNotCurrentIndexs()
+    private void hideObjects()
     {
-        int[] indexs = new int[] {1, 2, 3};
-
-        return indexs.Where(val => val != currentLevelIndex).ToArray();
+        foreach (List<GameObject> os in levelObjects)
+        {
+            foreach (GameObject o in os)
+            {
+                o.SetActive(false);
+            }
+            
+        }
     }
-
 
     // Update is called once per frame
     void Update()

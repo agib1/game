@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 //Level class that records the status of a given level. Used for game play progression.
 //Level is unlocked if previous level has recieved over two stars.
-public class Level : ScriptableObject
+public class Level : MonoBehaviour
 {
-    public string tag;
     public bool completed = false;
     public bool locked = true;
     public int stars = 0;
     public bool allowedToProceed = false;
-    private List<GameObject> levelObjects;
     private GameObject star1;
     private GameObject star2;
     private GameObject star3;
@@ -24,22 +23,11 @@ public class Level : ScriptableObject
 
     public void InitializeStars()
     {
-        levelObjects = GameObject.FindGameObjectsWithTag(tag).ToList();
-
-        Debug.Log(tag);
-
-        star1 = levelObjects.Find(obj=>obj.name=="star1");
-        star2 = levelObjects.Find(obj=>obj.name=="star2");
-        star3 = levelObjects.Find(obj=>obj.name=="star3");
+      
+        star1 = GameObject.Find("fstar1");
+        star2 = GameObject.Find("fstar2");
+        star3 = GameObject.Find("fstar3");
         
-        star1.SetActive(false);
-        star2.SetActive(false);
-        star3.SetActive(false);
-
-        if (tag == "Level1")
-        {
-            allowedToProceed = true;
-        }
     }
     
     public void UnlockLevel()
@@ -47,30 +35,38 @@ public class Level : ScriptableObject
         if (allowedToProceed == true)
         {
             locked = false;
-
-            GameObject lockIcon = levelObjects.Find(obj=>obj.name=="Lock");
-
-            lockIcon.SetActive(false);
         }
      
     }
 
     public void SetAsCompleted(float time)
     {
-        if (time <= 3) 
+        GameObject fail = GameObject.Find("Fail");
+        fail.SetActive(false);
+        
+        GameObject contin = GameObject.Find("NextLev");
+        contin.SetActive(false);
+
+        if (time == 2) 
         {
             stars = 1;
             star1.SetActive(true);
+            star2.SetActive(false);
+            star3.SetActive(false);
         }
-        if (time <= 2)
+        if (time == 1)
         {
             stars = 2;
             star2.SetActive(true);
+            star1.SetActive(false);
+            star3.SetActive(false);
         }
-        if (time <= 1)
+        if (time == 0)
         {
             stars = 3;
-            star2.SetActive(true);
+            star3.SetActive(true);
+            star1.SetActive(false);
+            star2.SetActive(false);
         }
 
         completed = true;   
@@ -78,6 +74,12 @@ public class Level : ScriptableObject
         if (stars >= 2)
         {
             allowedToProceed = true;
+            contin.SetActive(true);
+        }
+
+        if (stars < 2)
+        {
+            fail.SetActive(true);
         }
     }
 }
