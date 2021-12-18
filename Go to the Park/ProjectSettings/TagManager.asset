@@ -18,6 +18,8 @@ TagManager:
   - GameCanvas
   - FailCanvas
   - FinishCanvas
+  - Waypoint
+  - CarWaypoint
   layers:
   - Default
   - TransparentFX

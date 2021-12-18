@@ -16,20 +16,6 @@ public class Level : MonoBehaviour
     private GameObject star2;
     private GameObject star3;
 
-    private void Start()
-    {
-        InitializeStars();
-    }
-
-    public void InitializeStars()
-    {
-      
-        star1 = GameObject.Find("fstar1");
-        star2 = GameObject.Find("fstar2");
-        star3 = GameObject.Find("fstar3");
-        
-    }
-    
     public void UnlockLevel()
     {
         if (allowedToProceed == true)
@@ -41,6 +27,14 @@ public class Level : MonoBehaviour
 
     public void SetAsCompleted(float time)
     {
+        star1 = GameObject.Find("fstar1");
+        star2 = GameObject.Find("fstar2");
+        star3 = GameObject.Find("fstar3");
+        
+        star1.SetActive(false);
+        star2.SetActive(false);
+        star3.SetActive(false);
+
         GameObject fail = GameObject.Find("Fail");
         fail.SetActive(false);
         
@@ -51,22 +45,16 @@ public class Level : MonoBehaviour
         {
             stars = 1;
             star1.SetActive(true);
-            star2.SetActive(false);
-            star3.SetActive(false);
         }
         if (time == 1)
         {
             stars = 2;
             star2.SetActive(true);
-            star1.SetActive(false);
-            star3.SetActive(false);
         }
         if (time == 0)
         {
             stars = 3;
             star3.SetActive(true);
-            star1.SetActive(false);
-            star2.SetActive(false);
         }
 
         completed = true;   

@@ -18,7 +18,6 @@ public class Menu : MonoBehaviour
 
     public void Pause() 
     {
-        currentLevel = SceneManager.GetActiveScene().name;
 
         foreach (GameObject o in gameObjects)
         {
@@ -88,6 +87,8 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        currentLevel = SceneManager.GetActiveScene().name;
+
         menuObjects = GameObject.FindGameObjectsWithTag("MenuCanvas");
         failObjects = GameObject.FindGameObjectsWithTag("FailCanvas");
         finishObjects = GameObject.FindGameObjectsWithTag("FinishCanvas");

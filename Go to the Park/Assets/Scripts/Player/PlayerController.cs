@@ -107,9 +107,7 @@ public class PlayerController : MonoBehaviour
 
         menu = GetComponent<Menu>();
         level = GetComponent<Level>();
-
-        level.InitializeStars();
-
+        
     }
 
     // Update is called once per frame
@@ -117,7 +115,7 @@ public class PlayerController : MonoBehaviour
     {
         willToKeepGoingText.text = "Will To Keep Going: " + willToKeepGoing;
 
-        if (willToKeepGoing == 0) {
+        if (willToKeepGoing <= 0) {
             menu.Fail();
         }
 
