@@ -48,11 +48,13 @@ public class PlayerController : MonoBehaviour
         //However, this is not viewable from the player perspective, so is completely random.
         if (other.gameObject.CompareTag("Food"))
         {
+            FindObjectOfType<AudioManager>().Play("Energy");
             willToKeepGoing += foodPoints;
         }
 
         if (other.gameObject.CompareTag("Drink"))
         {
+            FindObjectOfType<AudioManager>().Play("Energy");
             willToKeepGoing += drinkPoints;
         }
     }
@@ -64,12 +66,14 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Human"))
         {
             willToKeepGoing -= humanPoints;
+            FindObjectOfType<AudioManager>().Play("Ouch");
 
         }
 
         if (collision.gameObject.CompareTag("Car"))
         {
             willToKeepGoing -= carPoints;
+            FindObjectOfType<AudioManager>().Play("Beep");
         }
 
         if (collision.gameObject.CompareTag("Nature"))
@@ -80,6 +84,7 @@ public class PlayerController : MonoBehaviour
             int time_range = ((int) timeElapsed /60);
             menu.Finish();
             level.SetAsCompleted(time_range);
+            FindObjectOfType<AudioManager>().Play("Win");
         }
 
     }
@@ -107,6 +112,7 @@ public class PlayerController : MonoBehaviour
         willToKeepGoingText.text = "Will To Keep Going: " + willToKeepGoing;
 
         if (willToKeepGoing <= 0) {
+            FindObjectOfType<AudioManager>().Play("Loose");
             menu.Fail();
         }
 

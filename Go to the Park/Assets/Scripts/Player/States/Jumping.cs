@@ -18,6 +18,7 @@ public class Jumping : PlayerBaseState
     public override void Enter()
     {
         base.Enter();
+        FindObjectOfType<AudioManager>().Play("Jump");
 
         Vector3 velocity = sm.GetComponent<Rigidbody>().velocity;
         velocity.y += sm.jumpForce;

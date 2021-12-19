@@ -68,6 +68,7 @@ public class LevelSelector : MonoBehaviour
     {
         if (currentLevel == "level1")
         {
+            FindObjectOfType<AudioManager>().Play("Beep");
             SceneManager.LoadScene("Level 1");
         }
         // if (currentLevel = level2)

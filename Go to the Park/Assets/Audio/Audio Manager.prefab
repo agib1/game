@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7113945846451209630
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7113945846451209628}
+  - component: {fileID: 7113945846451209631}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7113945846451209628
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113945846451209630}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7113945846451209631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7113945846451209630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d178fead182c48d29b68391879580fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Loose
+    clip: {fileID: 8300000, guid: b0ec4b5fef44d49c3a0f2fd943941919, type: 3}
+    volume: 0.57
+    loop: 0
+    source: {fileID: 0}
+  - name: Beep
+    clip: {fileID: 8300000, guid: c85280b3b17cc4515a4860b0163f1612, type: 3}
+    volume: 0.54
+    loop: 0
+    source: {fileID: 0}
+  - name: Walking
+    clip: {fileID: 8300000, guid: 1b62fdcf5000b48cfb00f0c19f522ea7, type: 3}
+    volume: 0.89
+    loop: 0
+    source: {fileID: 0}
+  - name: Win
+    clip: {fileID: 8300000, guid: 93a58e2ce9bf94da6aa04e905255880e, type: 3}
+    volume: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Ouch
+    clip: {fileID: 8300000, guid: 319b97c3bc8904a9086a4a648c07d22d, type: 3}
+    volume: 0.54
+    loop: 0
+    source: {fileID: 0}
+  - name: Energy
+    clip: {fileID: 8300000, guid: 92cc998cddf3c4f65baffa8c1bc5288a, type: 3}
+    volume: 0.7
+    loop: 0
+    source: {fileID: 0}
+  - name: Jump
+    clip: {fileID: 8300000, guid: 95bc30f803c964c0bac99976ba43613d, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Background
+    clip: {fileID: 8300000, guid: dfc663c02ed9f4c739560b895dca88f8, type: 3}
+    volume: 1
+    loop: 1
+    source: {fileID: 0}

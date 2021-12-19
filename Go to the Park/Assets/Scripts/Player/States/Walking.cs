@@ -25,6 +25,7 @@ public class Walking : Moving
     public override void Enter()
     {
         base.Enter();
+        FindObjectOfType<AudioManager>().Play("Walking");
 
         InitializeAcceleration();
     }
