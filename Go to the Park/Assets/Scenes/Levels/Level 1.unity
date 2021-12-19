@@ -3104,20 +3104,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 397743655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9014012b6761943a6a1d1462879d5da3, type: 3}
+  m_Script: {fileID: 11500000, guid: 84762e68b028b4e6e80305b516c22c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentState: {fileID: 0}
-  idleState: {fileID: 0}
-  walkingState: {fileID: 0}
-  anim: {fileID: 0}
-  nma: {fileID: 0}
-  currentWaypoint: {fileID: 0}
-  previousWaypoint: {fileID: 0}
-  waypointsVisited: 0
-  travelling: 0
-  waiting: 0
-  waitTimer: 0
 --- !u!195 &397743658
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -3140,6 +3129,36 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &397743659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397743655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33a3017ceafc546409c8a191474c8394, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &397743660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 397743655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a3b2eaf685234b0cb3af327001f3098, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  nma: {fileID: 0}
+  goals: {fileID: 0}
+  currentWaypoint: {fileID: 0}
+  previousWaypoint: {fileID: 0}
+  waypointsVisited: 0
 --- !u!1 &402357643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6836,9 +6855,6 @@ MonoBehaviour:
   carPoints:
   - {fileID: 2113907024}
   - {fileID: 2025610045}
-  anim: {fileID: 0}
-  idleState: {fileID: 0}
-  walkingState: {fileID: 0}
 --- !u!195 &983920863
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -7750,9 +7766,6 @@ MonoBehaviour:
   carPoints:
   - {fileID: 1985254007}
   - {fileID: 1561734174}
-  anim: {fileID: 0}
-  idleState: {fileID: 0}
-  walkingState: {fileID: 0}
 --- !u!195 &1041575046
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12146,9 +12159,6 @@ MonoBehaviour:
   carPoints:
   - {fileID: 943637232}
   - {fileID: 494575367}
-  anim: {fileID: 0}
-  idleState: {fileID: 0}
-  walkingState: {fileID: 0}
 --- !u!195 &1759679408
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -12953,9 +12963,6 @@ MonoBehaviour:
   carPoints:
   - {fileID: 1491591559}
   - {fileID: 1749732382}
-  anim: {fileID: 0}
-  idleState: {fileID: 0}
-  walkingState: {fileID: 0}
 --- !u!195 &1951379921
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -13873,9 +13880,6 @@ MonoBehaviour:
   carPoints:
   - {fileID: 1037572520}
   - {fileID: 1203699064}
-  anim: {fileID: 0}
-  idleState: {fileID: 0}
-  walkingState: {fileID: 0}
 --- !u!65 &2061326971
 BoxCollider:
   m_ObjectHideFlags: 0

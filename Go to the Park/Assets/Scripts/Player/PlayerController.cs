@@ -38,8 +38,6 @@ public class PlayerController : MonoBehaviour
     public Level level;
 
 
-
-    
     //Postive Feedback Loop: Player can choose to go around collecting poweups.
     //This will increase their time, making it less likely they will have enough stars (time completion based) to proceed to the next level.
     //However, the points gained with the powerups can reduce likleyness to die by loosing energy from getting hit by AI Cars and Humans.
@@ -66,14 +64,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Human"))
         {
             willToKeepGoing -= humanPoints;
-            // PhysicsCollisonResponse(humanMass, collision);
 
         }
 
         if (collision.gameObject.CompareTag("Car"))
         {
             willToKeepGoing -= carPoints;
-            // PhysicsCollisonResponse(carMass, collision);
         }
 
         if (collision.gameObject.CompareTag("Nature"))
@@ -84,14 +80,10 @@ public class PlayerController : MonoBehaviour
             int time_range = ((int) timeElapsed /60);
             menu.Finish();
             level.SetAsCompleted(time_range);
-	
-            //stop timer, get time
-            //pass to LevelSelector
         }
 
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         willToKeepGoing = 100;
@@ -110,7 +102,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         willToKeepGoingText.text = "Will To Keep Going: " + willToKeepGoing;
@@ -123,6 +114,8 @@ public class PlayerController : MonoBehaviour
       
     }
 
+
+    //Gameplay progression: timer records how long player takes to complete level to decide if fast enough to proceed to next.
     IEnumerator Timer() {
         while(timerGoing)
         {

@@ -16,6 +16,7 @@ public class Level : MonoBehaviour
     private GameObject star2;
     private GameObject star3;
 
+    //gameplay progression: level needs to be unlocked before allowed to play
     public void UnlockLevel()
     {
         if (allowedToProceed == true)
@@ -27,6 +28,7 @@ public class Level : MonoBehaviour
 
     public void SetAsCompleted(float time)
     {
+        //gameplay progression: uses time completed to determain star level and decide if allowed to proceed to next level
         star1 = GameObject.Find("fstar1");
         star2 = GameObject.Find("fstar2");
         star3 = GameObject.Find("fstar3");
@@ -59,6 +61,7 @@ public class Level : MonoBehaviour
 
         completed = true;   
 
+        //gameplay progression: only allowed to proceed if acheived more than 2 stars
         if (stars >= 2)
         {
             allowedToProceed = true;
