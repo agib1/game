@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637755477910000000
+      ticks: 637755496020000000
     m_Hash: 3407208252
   m_LockFileStatus:
     m_FilePath: /Users/arielegibson/Downloads/game/game/Go to the Park/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637755477910000000
+      ticks: 637755496020000000
     m_Hash: 2252848112
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -3088,10 +3088,27 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 0.0.12-preview.2
+    - 0.0.12-preview.5
+    - 0.0.12-preview.8
+    - 0.0.12-preview.10
+    - 0.0.12-preview.11
+    - 0.0.12-preview.13
+    - 0.0.12-preview.17
+    - 0.0.12-preview.19
+    - 0.0.12-preview.20
+    - 1.0.0-preview.1
+    - 1.0.1
+    - 1.1.0-preview.1
+    - 1.1.0
     - 1.2.1
+    - 1.2.4
+    - 1.2.5
     compatible:
     - 1.2.1
-    verified: 1.2.1
+    - 1.2.4
+    - 1.2.5
+    verified: 1.2.5
   dependencies: []
   resolvedDependencies: []
   keywords:
@@ -3108,12 +3125,12 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637324062630000000
   documentationUrl: 
   hasRepository: 1
   repository:
     type: git
-    url: https://github.com/Unity-Technologies/Unity.Mathematics.git
+    url: git+https://github.com/Unity-Technologies/Unity.Mathematics.git
     revision: 71412d94b7a0b0fdbb3195a5e6559bf6a761e91a
     path: 
   unityLifecycle:
@@ -3465,9 +3482,26 @@ m_ResolvedPackages:
   errors: []
   versions:
     all:
+    - 4.0.0-preview
+    - 4.0.0
+    - 4.0.7-preview
+    - 4.0.7
+    - 4.0.8-preview
+    - 4.0.9
+    - 4.1.0-preview
+    - 4.1.0
+    - 4.2.0
+    - 4.3.0
+    - 4.3.1
     - 4.3.2
+    - 4.6.0-preview
+    - 4.7.0-preview
+    - 4.9.1
     compatible:
     - 4.3.2
+    - 4.6.0-preview
+    - 4.7.0-preview
+    - 4.9.1
     verified: 4.3.2
   dependencies: []
   resolvedDependencies: []
@@ -3486,7 +3520,7 @@ m_ResolvedPackages:
   entitlements:
     isAllowed: 1
   isAssetStorePackage: 0
-  datePublishedTicks: 0
+  datePublishedTicks: 637509898070000000
   documentationUrl: 
   hasRepository: 1
   repository:

@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     public Level level;
 
+    public Material angryMaterial;
 
     //Postive Feedback Loop: Player can choose to go around collecting poweups.
     //This will increase their time, making it less likely they will have enough stars (time completion based) to proceed to the next level.
@@ -67,6 +68,17 @@ public class PlayerController : MonoBehaviour
         {
             willToKeepGoing -= humanPoints;
             FindObjectOfType<AudioManager>().Play("Ouch");
+
+            //add bloom effect if hit to show angry human ai
+            GameObject hitHuman = collision.gameObject;
+            
+            foreach (Transform child in hitHuman.transform)
+            {
+                if (child.gameObject.name == "Human_BaseMesh")
+                {
+                    child.gameObject.GetComponent<SkinnedMeshRenderer>().material = angryMaterial;
+                }
+            }
 
         }
 

@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class Powerups : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //could do random allocation of poweups based on level difficulty???
-
+    public Material usedMaterial;
+   
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
+
+            //removing bloom special effect if powerup is used.
+            GameObject parent = gameObject.transform.parent.gameObject;
+            
+            foreach (Transform child in parent.transform)
+            {
+                if (child.gameObject.name == "Cube")
+                {
+                    child.gameObject.GetComponent<MeshRenderer>().material = usedMaterial;
+                }
+            }
+
             gameObject.SetActive(false);
         }
         
     }
 }
-
