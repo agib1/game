@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.SceneManagement;
 
-//Class used to select levels using an instances of the Level class - not currently in use.
+//Class used to select levels using an instances of the Level class
 public class LevelSelector : MonoBehaviour
 {
     string[] levels;
@@ -74,10 +74,6 @@ public class LevelSelector : MonoBehaviour
         // {
         //     SceneManager.LoadScene("Level 2");
         // }
-        // if (currentLevel = level3)
-        // {
-        //     SceneManager.LoadScene("Level 3");
-        // }
     }
 
     private void showCurrentObjects()
@@ -100,11 +96,5 @@ public class LevelSelector : MonoBehaviour
             }
             
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
