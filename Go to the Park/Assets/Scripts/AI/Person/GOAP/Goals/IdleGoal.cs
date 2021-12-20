@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// goap idle goal for person ai
+// goap idle goal for person ai, inherites PersonGoals
 public class IdleGoal : PersonGoals
 {
     int priority = 10;

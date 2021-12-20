@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-// goap goals for wander ai
+// goap goals for wander ai, inherites persongoals
 public class WanderGoal: PersonGoals
 {
     int priority = 30;

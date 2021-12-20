@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Design Patterns: Clone factory prototypes
+//Design Patterns: Prototype: Cloning.
 //Spawns n people and pathfinding points relative to size of game track
 public class SpawnPeople : MonoBehaviour
 {

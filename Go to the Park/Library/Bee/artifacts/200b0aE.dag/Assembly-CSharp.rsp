@@ -343,6 +343,7 @@
 "Assets/Scripts/AI/Person/GOAP/Goals/PersonGoals.cs"
 "Assets/Scripts/AI/Person/GOAP/Goals/WanderGoal.cs"
 "Assets/Scripts/AI/Person/GOAP/GOAPController.cs"
+"Assets/Scripts/AI/Person/GOAP/PersonFlocking.cs"
 "Assets/Scripts/AI/Person/GOAP/PersonWaypoints.cs"
 "Assets/Scripts/AI/Person/SpawnPeople.cs"
 "Assets/Scripts/Audio/AudioManager.cs"

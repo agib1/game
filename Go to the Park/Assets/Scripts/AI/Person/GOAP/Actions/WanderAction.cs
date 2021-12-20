@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//Goap action for person ai wondering. uses pathfinding points in personwaypoints to wander through track.
+//Goap action for person ai wondering. uses pathfinding points in personwaypoints to wander through track.  inherites PersonActions
 public class WanderAction : PersonActions
 {
     List<System.Type> goals = new List<System.Type>(new System.Type[] {typeof(WanderGoal)});

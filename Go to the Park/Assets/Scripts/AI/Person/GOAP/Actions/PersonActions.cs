@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-//base class for person goap actions
+//base class for person goap actions, PersonActions implements the Actions interface.
 public interface Actions
 {
     List<System.Type> GetGoals();

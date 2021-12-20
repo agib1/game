@@ -61,7 +61,7 @@ public class PersonWaypoints : MonoBehaviour
         {
             PersonWaypoints nextWaypoint;
             int nextIndex = 0;
-
+            //Design patterns: Game Loop for checking if the next point is found to travel to
             do
             {
                 nextIndex = UnityEngine.Random.Range(0, connections.Count);

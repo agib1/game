@@ -37,6 +37,7 @@ public class GOAPController : MonoBehaviour
             //if current goal is priororitzed over next, skip.
             if (!(bestGoal == null || goal.CalculatePriority() > bestGoal.CalculatePriority()))
             {
+                Debug.Log(goal.CalculatePriority());
                 continue;
             }
 

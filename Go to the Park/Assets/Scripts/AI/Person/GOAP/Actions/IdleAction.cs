@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//State for idle, using AI state machine 
+//GOAP: Actionsfor idle ai, inherites PersonActions
 public class IdleAction : PersonActions
 {
     List<System.Type> goals = new List<System.Type>(new System.Type[] {typeof(IdleGoal)});

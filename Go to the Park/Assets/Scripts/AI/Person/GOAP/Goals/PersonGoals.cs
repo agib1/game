@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//Base goap goals for person ai
+//Base goap goals for person ai, PersonGoals implements the Goals interface.
 public interface Goals
 {
     int CalculatePriority();
