@@ -1070,10 +1070,24 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Rules:\nAvoid Cars\nPeople get angry if you bump into them\n\nJump for
-    energy!\nGet some energy from drink stations\nGet more energy from food stations
-    - \nbut they could be empty.\n\nGo to the park in good time to proceed\nto the
-    next level."
+  m_text: 'Rules:
+
+    Avoid Cars
+
+    People get angry if you bump into them
+
+
+    Jump
+    for energy from drink stations
+
+    Double Jump for energy from food stations
+    - but they could be empty.
+
+
+    Go to the park in good time to proceed
+
+    to
+    the next level.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -1,4 +1,10 @@
-Library/Bee/artifacts/movedfrom/Unity.InputSystem.ref.dll_10290228253825159320.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.Mathematics.ref.dll_8831363925663549285.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.RenderPipeline.Universal.ShaderLibrary.ref.dll_8533255858258826020.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.RenderPipelines.Core.Runtime.ref.dll_12019164996757134083.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.RenderPipelines.Core.ShaderLibrary.ref.dll_10839406051053775985.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.ref.dll_6593290341940425009.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.RenderPipelines.Universal.Runtime.ref.dll_7173365256642089377.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.RenderPipelines.Universal.Shaders.ref.dll_11814341479901850839.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.TextMeshPro.ref.dll_1604298332389602034.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.Timeline.ref.dll_14157860994053271624.movedfrom
 Library/Bee/artifacts/movedfrom/Unity.VisualScripting.Core.ref.dll_11461850060103567469.movedfrom
@@ -70,4 +76,4 @@ Library/Bee/artifacts/movedfrom/UnityEngine.VirtualTexturingModule.dll_103531816
 Library/Bee/artifacts/movedfrom/UnityEngine.VRModule.dll_98895905310025846.movedfrom
 Library/Bee/artifacts/movedfrom/UnityEngine.WindModule.dll_9639475933476037714.movedfrom
 Library/Bee/artifacts/movedfrom/UnityEngine.XRModule.dll_3755470277031032276.movedfrom
-Library/Bee/artifacts/movedfrom/Unity.VisualScripting.Antlr3.Runtime.dll_7995810040515537075.movedfrom
+Library/Bee/artifacts/movedfrom/Unity.VisualScripting.Antlr3.Runtime.dll_979155021191082018.movedfrom
